@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<div class="content-navigation style="margin-left:8%" >
+  <button
+    id="showFormButton"
+    class="aui-button aui-button-subtle edit"
+    id="button-spin-2">
+    Submit Plan
+  </button>
+
+   <button
+    id="showFormButton2"
+    class="aui-button aui-button-subtle edit"
+    id="button-spin-2">
+    Reject Plan
+  </button>
+  <button class="aui-button aui-button-subtle edit" id="previousVersionsButton">Archive Page</button>
+</div>
+
+

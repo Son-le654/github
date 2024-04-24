@@ -1,0 +1,40 @@
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}"
+	plugins-version="2">
+	<plugin-info>
+		<description>${project.description}</description>
+		<version>${project.version}</version>
+		<vendor name="${project.organization.name}"
+			url="${project.organization.url}" />
+		<param name="plugin-icon">images/pluginIcon.png</param>
+		<param name="plugin-logo">images/pluginLogo.png</param>
+	</plugin-info>
+
+	<!-- add our i18n resource -->
+	<resource type="i18n" name="i18n" location="plans-approval" />
+
+	<!-- add our web resources -->
+	<web-resource key="plans-approval-resources"
+		name="plans-approval Web Resources">
+		<dependency>com.atlassian.auiplugin:ajs</dependency>
+		<transformation extension="js">
+			<transformer key="jsI18n" />
+		</transformation>
+		<resource type="download" name="plans-approval.css"
+			location="/css/plans-approval.css" />
+		<resource type="download" name="plans-approval.js"
+			location="/js/plans-approval.js" />
+		<resource type="download" name="images/" location="/images" />
+		<context>plans-approval</context>
+		<context>page.metadata.banner</context>
+	</web-resource>
+
+	<rest key="mail-service" path="/mail" version="1.0">
+		<description>Sending email</description>
+	</rest>
+	<web-panel name="ButtonCustom" key="aui-button-subtle"
+		i18n-name-key="system.content.button"
+		location="atl.page.metadata.banner" weight="10">
+		<resource name="view" type="velocity"
+			location="/templates/plans-approval.vm" />
+	</web-panel>
+</atlassian-plugin>
